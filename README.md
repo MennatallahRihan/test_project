@@ -1,6 +1,6 @@
 # test_project
-how to run c files in Ubuntu
+how to run c++ files in Ubuntu
 
-gcc program-source-code.c -o executable-file-name
+g++ -o executable-file-name file-name.cpp
 
 ./executable-file-name
