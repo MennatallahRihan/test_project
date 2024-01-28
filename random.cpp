@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <chrono>
 #include <iostream>
+#include <bits/stdc++.h>
 int main()
 {
 
@@ -30,6 +31,24 @@ int main()
     auto stop = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
     std::cout << duration.count() << " microseconds" << std::endl;
+
+    std::unordered_set<int> nums;
     
+    for (int i = 0; i < 100000; i++)
+    {
+        nums.insert(gen());
+    }
+    start = std::chrono::high_resolution_clock::now();
+    if ( nums.find(64)== nums.end())
+    {
+        std::cout<< "number not found" << std::endl;
+
+    }
+    else {
+        std::cout<< "number found" << std::endl;
+    }
+    stop = std::chrono::high_resolution_clock::now();
+    duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+    std::cout << duration.count() << " microseconds: Hashset" << std::endl;
     return 0;
 }
